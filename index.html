@@ -44,9 +44,33 @@
             background-color: oklch(0.938 0.127 124.321);
             color: #000;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(250, 82, 82, 0.3);
+            z-index: 1;
         }
         
-
+        .hero-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .hero-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(250, 82, 82, 0.5);
+        }
+        
+        .hero-button:hover:before {
+            left: 100%;
+        }
+        
         .lazy-button {
             background-color: #00B9A7;
             color: #fff;
@@ -162,6 +186,54 @@
         .carousel-indicator.active {
             background-color: #000;
         }
+        
+        .trade-button {
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        
+        .trade-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .trade-button:hover {
+            color: #000;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        .trade-button:hover:before {
+            width: 100%;
+        }
+        
+        .button-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(250, 82, 82, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(250, 82, 82, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(250, 82, 82, 0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -211,8 +283,19 @@
                     <div class="mb-6">
                         <p class="text-sm uppercase tracking-wider mb-4">SONEIUM ROOKY NFT COLLECTION</p>
                         <h1 class="text-5xl md:text-6xl font-bold mb-8">Own the future<br>Be a Rooky</h1>
-                        <a target="_blank" href="https://rooky-soneium.nfts2.me/" class="inline-block hero-button px-8 py-3 rounded-md font-medium text-lg">Mint NFT</a>
-                        <a target="_blank" href="https://opensea.io/collection/rooky-soneium/activity" class="inline-block text-[#e5e7eb] bg-black px-8 py-3 rounded-md font-medium text-lg border border-[#e5e7eb]">Trade NFT</a>
+                        <a target="_blank" href="https://rooky-soneium.nfts2.me/" class="inline-block hero-button px-8 py-4 rounded-lg font-bold text-lg mr-4 button-pulse relative group">
+                            <span class="flex items-center">
+                                <i class="fas fa-fire-alt mr-2"></i>
+                                Mint NFT
+                                <span class="ml-1 text-xs bg-black text-white px-2 py-1 rounded-full">FREE</span>
+                            </span>
+                        </a>
+                        <a target="_blank" href="https://opensea.io/collection/rooky-soneium/activity" class="inline-block trade-button px-8 py-4 rounded-lg font-bold text-lg">
+                            <span class="flex items-center">
+                                <i class="fas fa-exchange-alt mr-2"></i>
+                                Trade NFT
+                            </span>
+                        </a>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 flex justify-end">
