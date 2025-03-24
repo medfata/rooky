@@ -1,0 +1,9 @@
+This is a placeholder file for the assets directory.
+
+Please add your own images in this folder.
+
+Required images:
+1. hero-bg.jpg - Hero section background image (1920x1080 recommended)
+2. User profile images for testimonials
+
+You can replace these with your own images and update the references in the index.html file. 
