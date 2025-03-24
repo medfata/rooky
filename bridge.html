@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooky - Bridge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #000;
+            color: #fff;
+        }
+        
+        .navigation-link {
+            position: relative;
+        }
+        
+        .navigation-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #fff;
+            transition: width 0.3s ease;
+        }
+        
+        .navigation-link:hover:after {
+            width: 100%;
+        }
+        
+        .hero-button {
+            background-color: oklch(0.938 0.127 124.321);
+            color: #000;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #000;
+            padding: 1rem;
+            display: none;
+            z-index: 40;
+        }
+        
+        .mobile-nav.open {
+            display: block;
+        }
+        
+        .bridge-section {
+            background-color: oklch(0.967 0.067 122.328);
+            padding: 5rem 0;
+            min-height: 80vh;
+        }
+        
+        .bridge-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .bridge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-black py-4 sticky top-0 z-50 relative">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <div class="relative text-3xl font-bold">
+                    <span class="text-white">Soneium Rooky</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-gray-300 transition-colors font-medium navigation-link">Home</a>
+                <div class="relative group">
+                    <a href="bridge.html" class="text-white hover:text-gray-300 transition-colors font-medium navigation-link flex items-center">
+                        Bridge
+                    </a>
+                </div>
+                <a href="mint.html" class="text-white hover:text-gray-300 transition-colors font-medium navigation-link">Rooky Mint</a>
+                <a href="contact.html" class="text-white hover:text-gray-300 transition-colors font-medium navigation-link">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-3">
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-nav" class="mobile-nav border-t border-gray-800">
+            <div class="flex flex-col space-y-4">
+                <a href="index.html" class="text-white hover:text-gray-300 transition-colors font-medium py-2">Home</a>
+                <a href="bridge.html" class="text-white hover:text-gray-300 transition-colors font-medium py-2">Bridge</a>
+                <a href="mint.html" class="text-white hover:text-gray-300 transition-colors font-medium py-2">Rooky Mint</a>
+                <a href="contact.html" class="text-white hover:text-gray-300 transition-colors font-medium py-2">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bridge Section -->
+    <section class="bridge-section py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center text-black mb-8">Bridge your assets to/from Soneium</h1>
+            
+            <p class="text-black text-center max-w-3xl mx-auto mb-16">
+                Bridge your assets to/from Soneium. Please note that the bridge applications are developed by third-party
+                projects and are subject to each product's terms and conditions.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Superbridge Card -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg bridge-card">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="mx-auto">
+                                <img src="https://soneium.org/image/bridge/superbridge.svg" alt="Superbridge Logo" class="h-16 w-16 m-auto" style="width: 6.25rem; height: 6.25rem; object-fit: cover; border-radius: .5rem; overflow: hidden;">
+                                <h3 class="text-2xl font-bold text-center text-black">Superbridge</h3>
+                                <p class="text-gray-600 text-center">By Blob Engineering</p>
+                            </div>
+                            <a href="https://superbridge.app/soneium" target="_blank" class="text-gray-400 hover:text-gray-600" aria-label="External Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Bridge ETH and ERC20 tokens directly from Ethereum mainnet to Soneium.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Astar Portal Card -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg bridge-card">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="mx-auto">
+                                <img src="https://soneium.org/image/bridge/astar.webp" alt="Astar Portal Logo" class="h-16 w-16 m-auto" style="width: 6.25rem; height: 6.25rem; object-fit: cover; border-radius: .5rem; overflow: hidden;">
+                                <h3 class="text-2xl font-bold text-center text-black">Astar Portal</h3>
+                                <p class="text-gray-600 text-center">By Astar Network</p>
+                            </div>
+                            <a href="https://portal.astar.network/astar/bridge/ccip" target="_blank" class="text-gray-400 hover:text-gray-600" aria-label="External Link">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                </svg>
+                            </a>
+                        </div>
+                        <p class="text-gray-700 text-center">
+                            Bridge ASTR token between Astar Network and Soneium.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-6">
+        <div class="container mx-auto px-4 text-center text-white">
+            <p>Soneium Rooky | 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('open');
+        });
+    </script>
+</body>
+</html> 
